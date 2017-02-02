@@ -3,7 +3,7 @@ import math
 def logo():
 	myPen = Turtle()
 	myPen.speed(500)
-
+	myPen.shape("arrow")
 	window = Screen()
 	window.bgcolor("#000000")
 	myPen.color("yellow")
@@ -13,7 +13,7 @@ def logo():
 
 def draw(myPen):
 	zoom=20
-
+	myPen.speed(3)
 	myPen.left(90)
 	myPen.penup()
 	myPen.goto(-7*zoom,0)
@@ -23,6 +23,7 @@ def draw(myPen):
 	  absx=math.fabs(x)
 	  y=1.5*math.sqrt((-math.fabs(absx-1))*math.fabs(3-absx)/((absx-1)*(3-absx)))*(1+math.fabs(absx-3)/(absx-3))*math.sqrt(1-(x/7)**2)+(4.5+0.75*(math.fabs(x-0.5)+math.fabs(x+0.5))-2.75*(math.fabs(x-0.75)+math.fabs(x+0.75)))*(1+math.fabs(1-absx)/(1-absx))
 	  myPen.goto(xz,y*zoom)
+
 
 	for xz in range(-3*zoom,-1*zoom-1,1):
 	  x=xz/zoom
@@ -67,6 +68,7 @@ def draw(myPen):
 	  
 	myPen.penup()
 	myPen.goto(300,300)
+	return input()
 
 if __name__ == '__main__':
 	logo()
